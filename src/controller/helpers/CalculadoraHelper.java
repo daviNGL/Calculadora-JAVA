@@ -18,5 +18,21 @@ public class CalculadoraHelper {
     public CalculadoraHelper(CalculadoraView view) {
         this.view = view;
     }
+
+    public void concatenarNoDisplay(String numeroClicado) {
+        this.view.getTxtConta().setText( this.view.getTxtConta().getText() + numeroClicado );
+    }
+
+    public void limpar() {
+        this.view.getTxtConta().setText("");
+    }
+
+    public String pegarNumeroDoDisplay() {
+        return( this.view.getTxtConta().getText() );
+    }
+
+    public void exibir(String resultado) {
+        this.view.getTxtConta().setText(resultado);
+    }
     
 }

@@ -6,6 +6,8 @@
 package view;
 
 import controller.CalculadoraController;
+import javax.swing.JButton;
+import javax.swing.JTextField;
 
 /**
  *
@@ -14,6 +16,9 @@ import controller.CalculadoraController;
 public class CalculadoraView extends javax.swing.JFrame {
 
     private final CalculadoraController controlador;
+    private String num1 = "";
+    private String num2 = "";
+    private String operacao = "";
     
     /**
      * Creates new form CalculadoraView
@@ -53,45 +58,109 @@ public class CalculadoraView extends javax.swing.JFrame {
         txtConta = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Calculadora Basica");
+        setLocation(new java.awt.Point(100, 100));
+        setLocationByPlatform(true);
+        setResizable(false);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setText("1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoNumeroClicadoEvento(evt);
+            }
+        });
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton2.setText("2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoNumeroClicadoEvento(evt);
+            }
+        });
 
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton3.setText("3");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoNumeroClicadoEvento(evt);
+            }
+        });
 
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton4.setText("4");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoNumeroClicadoEvento(evt);
+            }
+        });
 
         jButton5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton5.setText("7");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoNumeroClicadoEvento(evt);
+            }
+        });
 
         btnClear.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnClear.setForeground(new java.awt.Color(255, 0, 0));
         btnClear.setText("C");
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearActionPerformed(evt);
+            }
+        });
 
         jButton7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton7.setText("5");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoNumeroClicadoEvento(evt);
+            }
+        });
 
         jButton8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton8.setText("8");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoNumeroClicadoEvento(evt);
+            }
+        });
 
         jButton9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton9.setText("0");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoNumeroClicadoEvento(evt);
+            }
+        });
 
         jButton10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton10.setText("6");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoNumeroClicadoEvento(evt);
+            }
+        });
 
         jButton11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton11.setText("9");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoNumeroClicadoEvento(evt);
+            }
+        });
 
         btnIgual.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnIgual.setText("=");
+        btnIgual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIgualActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -159,15 +228,35 @@ public class CalculadoraView extends javax.swing.JFrame {
 
         btnMais.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnMais.setText("+");
+        btnMais.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoOperacaoEvento(evt);
+            }
+        });
 
         btnMenos.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnMenos.setText("-");
+        btnMenos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoOperacaoEvento(evt);
+            }
+        });
 
         btnDividir.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnDividir.setText("/");
+        btnDividir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoOperacaoEvento(evt);
+            }
+        });
 
         btnVezes.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnVezes.setText("x");
+        btnVezes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoOperacaoEvento(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -229,6 +318,26 @@ public class CalculadoraView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void botaoNumeroClicadoEvento(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoNumeroClicadoEvento
+        
+        JButton botaoClicado = (JButton) evt.getSource();
+        this.controlador.atualizarNumeroExibido(botaoClicado.getText());
+        
+    }//GEN-LAST:event_botaoNumeroClicadoEvento
+
+    private void botaoOperacaoEvento(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoOperacaoEvento
+        JButton botaoClicado = (JButton) evt.getSource();
+        this.controlador.definirOperacao(botaoClicado.getText());
+    }//GEN-LAST:event_botaoOperacaoEvento
+
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+        this.controlador.limparTela();
+    }//GEN-LAST:event_btnClearActionPerformed
+
+    private void btnIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIgualActionPerformed
+        this.controlador.exibirResultado();
+    }//GEN-LAST:event_btnIgualActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -240,7 +349,7 @@ public class CalculadoraView extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -263,6 +372,34 @@ public class CalculadoraView extends javax.swing.JFrame {
             }
         });
     }
+
+    //Getters and Setters
+    public JTextField getTxtConta() {
+        return txtConta;
+    }
+    public void setTxtConta(JTextField txtConta) {
+        this.txtConta = txtConta;
+    }
+    public String getNum1() {
+        return num1;
+    }
+    public void setNum1(String num1) {
+        this.num1 = num1;
+    }
+    public String getNum2() {
+        return num2;
+    }
+    public void setNum2(String num2) {
+        this.num2 = num2;
+    }
+    public String getOperacao() {
+        return operacao;
+    }
+    public void setOperacao(String operacao) {
+        this.operacao = operacao;
+    }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnClear;
